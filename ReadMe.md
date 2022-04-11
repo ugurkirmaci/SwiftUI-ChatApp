@@ -6,9 +6,7 @@
 - Supports sharing of images as well.
 
 ## Screenshots 📷
- <p float="left">
- <img src ="Assets/asset.png" /> 
- </p>
+ ![Assets](./asset.png)
  
  ## Installation 🛠
  - Clone / download this repository.
