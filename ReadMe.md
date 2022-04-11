@@ -7,7 +7,7 @@
 
 ## Screenshots 📷
  <p float="left">
- <img src ="SwiftUIFirbaseChat/Assets/asset.png.imageset/asset.png" /> 
+ <img src ="SwiftUIFirebaseChat/SwiftUIFirebaseChat/Assets/asset.png" /> 
  </p>
  
  ## Installation 🛠
