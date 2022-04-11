@@ -6,7 +6,9 @@
 - Supports sharing of images as well.
 
 ## Screenshots 📷
- ![Assets](./asset.png)
+ <p float="left">
+ <img src ="SwiftUIFirbaseChat/Assets.xcassets/asset.png.imageset/asset.png" /> 
+ </p>
  
  ## Installation 🛠
  - Clone / download this repository.
