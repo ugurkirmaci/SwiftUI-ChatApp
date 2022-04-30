@@ -18,8 +18,8 @@
 
  
 ## Includes ( ALL SWIFTUI )
-- Combine Framework
-- Firebase Auth + Database + Storage
-- Custom Modifiers
-- Animations
+- Combine Framework.
+- Firebase Auth + Database + Storage.
+- Custom Modifiers.
+- Animations.
 - Image picker. 
