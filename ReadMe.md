@@ -22,4 +22,4 @@
 - Firebase Auth + Database + Storage
 - Custom Modifiers
 - Animations
-- Image picker 
+- Image picker. 
