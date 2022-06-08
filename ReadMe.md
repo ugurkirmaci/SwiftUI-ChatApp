@@ -3,7 +3,7 @@
 ## Overview 💬
 - This app can be used for realtime one to one chatting
 - data is stored in firebase database.
-- Supports sharing of images as well.
+- Supports sharing of images as well..
 
 ## Screenshots 📷
  <p float="left">
