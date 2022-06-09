@@ -11,11 +11,15 @@ import FirebaseFirestore
 //Firebase xcode similoturu uzerinde crash yememesi icin
 class FirebaseManager: NSObject {
     
+    //MARK: - Properties
+    
     let auth: Auth
     let storage: Storage
     let firestore: Firestore
     
     static let shared = FirebaseManager()
+    
+    //MARK: - Initialiser
     
     override init() {
         FirebaseApp.configure()

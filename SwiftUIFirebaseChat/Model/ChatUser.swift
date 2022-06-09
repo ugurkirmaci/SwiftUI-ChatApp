@@ -6,9 +6,13 @@ import Foundation
 
 struct ChatUser: Identifiable {
     
+    //MARK: - Properties
+    
     var id: String { uid }
     
     let uid, email, profileImageUrl: String
+    
+    //MARK: - Initialiser
     
     init(data: [String: Any]) {
         self.uid = data["uid"] as? String ?? ""

@@ -9,6 +9,8 @@ import FirebaseFirestore
 struct FirbaseConstants: Identifiable {
     var id: ObjectIdentifier
     
+    //MARK: - Properties
+    
     static let fromId = "fromId"
     static let toId = "toId"
     static let text = "text"

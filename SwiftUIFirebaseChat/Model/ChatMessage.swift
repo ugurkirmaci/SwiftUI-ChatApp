@@ -6,6 +6,8 @@
 import Foundation
 import FirebaseFirestoreSwift
 
+//MARK: - Properties
+
 //mesajlarimiz aldigimiz firebase datastore
 struct ChatMessage: Codable, Identifiable {
     @DocumentID var id: String?

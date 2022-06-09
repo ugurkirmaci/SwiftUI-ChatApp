@@ -9,6 +9,8 @@ import FirebaseFirestoreSwift
 //son mesaj kisminin duzenlemesi
 struct RecentMessage: Codable, Identifiable {
     
+    //MARK: - Properties
+    
     @DocumentID var id: String?
     let text, email: String
     let fromId, toId: String
