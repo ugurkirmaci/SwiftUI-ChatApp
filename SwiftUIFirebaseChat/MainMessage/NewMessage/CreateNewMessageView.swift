@@ -10,12 +10,18 @@ import SDWebImageSwiftUI
 
 class CreateNewMessageViewModel: ObservableObject {
     
+    //MARK: - Properties
+    
     @Published var users = [ChatUser]()//[ChatUser]? seklinde de kullanilir.
     @Published var errorMessage = ""
+    
+    //MARK: - Initialiser
     
     init() {
         fetchAllUsers()
     }
+    
+    //MARK: - Private Methods
     
     private func fetchAllUsers() {
         FirebaseManager.shared.firestore.collection("users").getDocuments { documentsSnapshot, error in
@@ -38,6 +44,8 @@ class CreateNewMessageViewModel: ObservableObject {
 
 struct CreateNewMessageView: View {
     
+    //MARK: - Properties
+    
     //Kullanicilar secildiginde
     let didSelectNewUser: (ChatUser) -> ()//callback func.
     
@@ -45,6 +53,8 @@ struct CreateNewMessageView: View {
     @Environment(\.presentationMode) var presentationMode
     
     @ObservedObject var vm = CreateNewMessageViewModel()
+    
+    //MARK: - Body
     
     var body: some View {
         NavigationView {
@@ -92,6 +102,8 @@ struct CreateNewMessageView: View {
         }
     }
 }
+
+//MARK: - Previews
 
 struct CreateNewMessageView_Previews: PreviewProvider {
     static var previews: some View {

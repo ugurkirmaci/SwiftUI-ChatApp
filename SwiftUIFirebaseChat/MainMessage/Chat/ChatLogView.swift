@@ -10,11 +10,15 @@ import FirebaseFirestore
 //Firebase for ChatLog
 class ChatLogViewModel: ObservableObject {
     
+    //MARK: - Properties
+    
     @Published var chatText = ""
     @Published var errorMessage = ""
     @Published var chatMessages = [ChatMessage]()
     
     var chatUser: ChatUser?
+    
+    //MARK: - Initialiser
     
     init(chatUser: ChatUser?) {
         self.chatUser = chatUser
@@ -23,6 +27,8 @@ class ChatLogViewModel: ObservableObject {
     }
     
     var firestoreListener: ListenerRegistration?
+    
+    //MARK: - Public Methods
     
     func fetchMessages() {
         guard let fromId = FirebaseManager.shared.auth.currentUser?.uid else { return }
@@ -62,6 +68,9 @@ class ChatLogViewModel: ObservableObject {
                 }
             }
     }
+    
+    //MARK: - Public Methods
+    
     //Mesaj gondermek icin func
     func handleSend() {
         print(chatText)
@@ -103,6 +112,8 @@ class ChatLogViewModel: ObservableObject {
             print("Recipient saved message as well")
         }
     }
+    
+    //MARK: - Private Methods
     
     //persistRecentMessage func.
     private func persistRecentMessage() {
@@ -160,6 +171,9 @@ class ChatLogViewModel: ObservableObject {
 //                }
 //            }
     }
+    
+    //MARK: - Properties
+    
     //Yazilan mesajlarda send butonuna bastigimizda  scroll otomatik olarak en basa eklemesi icin
     @Published var count = 0
 }
@@ -175,8 +189,12 @@ struct ChatLogView: View {
 //        self.vm = .init(chatUser: chatUser)
 //    }
     
+    //MARK: - Properties
+    
     //@ObservedObject Sayfanız içerisinde yaptigimiz değişimleri diğer sayfalara taşıyabilir.Taşınan sayfada yapılan değişiklikler bir önceki sayfa üzerindede update edilmiş olur.
     @ObservedObject var vm: ChatLogViewModel
+    
+    //MARK: - Body
     
     var body: some View {
         ZStack {
@@ -192,6 +210,8 @@ struct ChatLogView: View {
     }
     
     static let emptyScrollToString = "Empty"
+    
+    //MARK: - Private Methods
     
     private var messagesView: some View {
         VStack {
@@ -223,6 +243,8 @@ struct ChatLogView: View {
         
     }
     
+    //MARK: - Private Methods
+    
     private var chatBottomBar: some View {
         HStack(spacing: 16) {
             Image(systemName: "photo.on.rectangle")
@@ -253,7 +275,11 @@ struct ChatLogView: View {
 
 struct MessageView: View {
     
+    //MARK: - Properties
+    
     let message: ChatMessage
+    
+    //MARK: - Body
     
     var body: some View {
         // Karsi tarafin yazdigi mesaj gorunum style.
@@ -287,6 +313,8 @@ struct MessageView: View {
     }
 }
 
+//MARK: - Private Methods
+
 private struct DescriptionPlaceholder: View {
     var body: some View {
         HStack {
@@ -299,6 +327,8 @@ private struct DescriptionPlaceholder: View {
         }
     }
 }
+
+//MARK: - Previews
 
 struct ChatLogView_Previews: PreviewProvider {
     static var previews: some View {

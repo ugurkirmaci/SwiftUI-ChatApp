@@ -11,9 +11,11 @@ import FirebaseFirestore
 
 struct LoginView: View {
     
+    //MARK: - Properties
     //Login onclick oldugunda
     let didCompleteLoginProcess: () -> ()
     
+    //MARK: - Properties
     
     //Picker bind
     @State private var isLoginMode = false
@@ -23,6 +25,8 @@ struct LoginView: View {
     
     
     @State private var shouldShowImagePicker = false
+    
+    //MARK: - Body
     
     var body: some View {
         //NavigationView(Tabs)
@@ -104,9 +108,12 @@ struct LoginView: View {
             
         }
     }
+    
+    //MARK: - Properties
     //Imagepicker bind etmek icin
     @State var image: UIImage?
     
+    //MARK: - Private Methods
     //Creat Account button click
     private func handleAction() {
         if isLoginMode {
@@ -117,6 +124,8 @@ struct LoginView: View {
 //            print("Register a new account inside of Firebase Auth and then store in Storage somehow...")
         }
     }
+    
+    //MARK: - Private Methods
     //Login
     private func loginUser() {
         FirebaseManager.shared.auth.signIn(withEmail: email, password: password) { result, err in
@@ -133,8 +142,12 @@ struct LoginView: View {
             self.didCompleteLoginProcess()
         }
     }
+    
+    //MARK: - Properties
     //Message
     @State var loginStatusMessage = ""
+    
+    //MARK: - Private Methods
     
     //Create users Account
     private func createNewAccount() {
@@ -160,6 +173,8 @@ struct LoginView: View {
         }
     }
     
+    //MARK: - Private Methods
+    
     private func persistImageToStorage() {
 //        let filename = UUID().uuidString
         guard let uid = FirebaseManager.shared.auth.currentUser?.uid else { return }
@@ -184,6 +199,8 @@ struct LoginView: View {
             }
         }
     }
+    
+    //MARK: - Private Methods
     //Firestore
     private func storeUserInformation(imageProfileUrl: URL) {
         guard let uid = FirebaseManager.shared.auth.currentUser?.uid else { return }
@@ -205,6 +222,8 @@ struct LoginView: View {
             }
     }
 }
+
+//MARK: - Previews
 
 struct ContentView_Previews1: PreviewProvider {
     static var previews: some View {

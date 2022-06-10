@@ -12,11 +12,14 @@ import FirebaseFirestoreSwift
 
 //Login oldugunda gozukmesi icin
 class MainMessageViewModel: ObservableObject {
+    
+    //MARK: - Properties
     //Error Message Published
     @Published var errorMessage = ""
     @Published var chatUser: ChatUser?
     @Published var isUserCurrentlyLoggedOut = false
     
+    //MARK: - Initialiser
     
     init() {
         
@@ -29,9 +32,15 @@ class MainMessageViewModel: ObservableObject {
         fetchRecentMessages()
     }
     
+    //MARK: - Properties
+    
     @Published var recentMessages = [RecentMessage]()
     
+    //MARK: - Private Methods
+    
     private var  firestoreListener: ListenerRegistration?
+    
+    //MARK: - Public Method
     //recent func.
      func fetchRecentMessages() {
         guard let uid = FirebaseManager.shared.auth.currentUser?.uid else { return }
@@ -73,6 +82,8 @@ class MainMessageViewModel: ObservableObject {
             }
     }
     
+    //MARK: - Public Methods
+    
      func fetchCurrentUser() {
         guard let uid = FirebaseManager.shared.auth.currentUser?.uid else {
             self.errorMessage = "Could not find firebase  uid"
@@ -99,6 +110,8 @@ class MainMessageViewModel: ObservableObject {
         }
     }
     
+    //MARK: - Public Methods
+    
     //SignOut func
     func handleSignOut() {
         isUserCurrentlyLoggedOut.toggle()
@@ -109,6 +122,8 @@ class MainMessageViewModel: ObservableObject {
 
 struct MainMessageView: View {
     
+    //MARK: - Properties
+    
     @State var shouldShowLogOutOptions = false
     
     @State var shouldNavigateToChatLogView = false
@@ -116,7 +131,11 @@ struct MainMessageView: View {
     //MainMassageViewModel'i burdan cekiyoruz.
     @ObservedObject private var vm = MainMessageViewModel()
     
+    //MARK: - Private Methods
+    
     private var chatLogViewModel = ChatLogViewModel(chatUser: nil)
+    
+    //MARK: - Body
     
     var body: some View {
         NavigationView {
@@ -135,6 +154,8 @@ struct MainMessageView: View {
             .navigationBarHidden(true)
         }
     }
+    
+    //MARK: - Private Methods
     
     private var customNavBar: some View {
         HStack(spacing: 16) {
@@ -196,6 +217,8 @@ struct MainMessageView: View {
             })
         }
     }
+    
+    //MARK: - Private Methods
 
     private var messageView: some View {
         ScrollView {
@@ -245,8 +268,13 @@ struct MainMessageView: View {
             }.padding(.bottom, 50)
         }
     }
+    
+    //MARK: - Properties
+    
     //+NewMessage butona tiklandiginda list gelecek
     @State var shouldShowNewMessageScreen = false
+    
+    //MARK: - Private Methods
     
     private var newMessageButton: some View {
         Button {
@@ -279,7 +307,7 @@ struct MainMessageView: View {
     @State var chatUser: ChatUser?
 }
 
-
+//MARK: - Previews
 
 struct MainMessageView_Previews: PreviewProvider {
     static var previews: some View {
