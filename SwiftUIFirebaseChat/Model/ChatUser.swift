@@ -4,7 +4,7 @@
 
 import Foundation
 
-struct ChatUser: Identifiable {
+struct ChatUser: Identifiable,Codable {
     
     //MARK: - Properties
     
