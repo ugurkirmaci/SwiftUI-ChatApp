@@ -22,7 +22,7 @@ class FirebaseManager: NSObject {
     //MARK: - Initialiser
     
     override init() {
-        FirebaseApp.configure()
+
         
         self.auth = Auth.auth()
         self.storage = Storage.storage()

@@ -5,7 +5,7 @@
 //
 import Foundation
 
-struct Issue: Identifiable{
+struct Issue:Decodable, Identifiable{
     let id: String
     let user: ChatUser
     let title: String

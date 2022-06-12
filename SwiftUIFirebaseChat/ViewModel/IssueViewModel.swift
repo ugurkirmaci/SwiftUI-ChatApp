@@ -59,7 +59,6 @@ extension IssueViewModel {
     func deleteIssue(issue: Issue){
         db.collection("issues").document(issue.id).delete(){ error in
             if let error = error {
-                self.alertViewModel.fatalError = CustomizedError.deleteError
                 print(error.localizedDescription)
                 print(CustomizedError.deleteError.localizedDescription)
                 self.alertViewModel.fatalError = CustomizedError.deleteError
