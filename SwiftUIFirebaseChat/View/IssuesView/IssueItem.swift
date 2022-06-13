@@ -15,7 +15,7 @@ struct IssueItem: View {
  
     
     var body: some View {
-        VStack(alignment: .leading) {            
+        ZStack(alignment: .leading) {
             Image(systemName: "circle.fill")
                 .renderingMode(.original)
                 .resizable()
@@ -32,6 +32,6 @@ struct IssueItem: View {
                 .foregroundColor(.primary)
                 .font(.headline)
         }
-        .padding()
+        .padding(20)
     }
 }

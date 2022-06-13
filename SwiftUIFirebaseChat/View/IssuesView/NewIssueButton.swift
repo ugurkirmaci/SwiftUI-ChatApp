@@ -22,6 +22,9 @@ struct NewIssueButton: View {
                 WebImage(url: URL(string: userViewModel.chatUser?.profileImageUrl ?? ""))
                     .renderingMode(.original)
                     .resizable()
+                    .placeholder(content: {
+                        ProgressView()
+                    })
                     .frame(width: getScreenBounds().width * 0.25,
                            height: getScreenBounds().width * 0.25,
                            alignment: .center)
@@ -34,6 +37,8 @@ struct NewIssueButton: View {
                 } label: {
                     Image(systemName: "plus.circle.fill")
                         .resizable()
+                        .background(Color.white)
+                        .clipShape(Circle())
                         .frame(width: getScreenBounds().width * 0.1,
                                height: getScreenBounds().width * 0.1)
                         .foregroundColor(.blue)

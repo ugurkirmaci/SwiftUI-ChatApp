@@ -32,13 +32,15 @@ struct UserSelfIssueRow: View {
                     else {
                      
                         Text("List is Empty")
-                            .padding()
+                            .bold()
+                            .font(.largeTitle)
+                            .foregroundColor(.red)
+                            .padding(.leading, 50)
                     }
                 }
             }//:ScroolView
         }//:HStack
-        .frame(height: getScreenBounds().height * 0.2 , alignment: .center)
-        
+        .frame(height: getScreenBounds().height * 0.16 , alignment: .center)
     }
 }
 
