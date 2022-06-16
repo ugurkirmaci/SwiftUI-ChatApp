@@ -162,6 +162,9 @@ struct MainMessageView: View {
             //SDWebImage kutuphanesinde
             WebImage(url: URL(string: vm.chatUser?.profileImageUrl ?? ""))
                 .resizable()
+                .placeholder(content: {
+                    ProgressView()
+                })
                 .scaledToFill()
                 .frame(width: 50, height: 50)
                 .clipped()
@@ -170,7 +173,6 @@ struct MainMessageView: View {
                             .stroke(Color(.label), lineWidth: 1)
                 )
                 .shadow(radius: 5)
-            
             
             VStack(alignment: .leading, spacing: 4) {
                 //Login olduktan sonra
