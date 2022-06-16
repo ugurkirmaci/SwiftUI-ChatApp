@@ -11,13 +11,11 @@ import SDWebImageSwiftUI
 struct NewIssueButton: View {
     @State var isShowNewIssuePage = false
     @ObservedObject var userViewModel = MainMessageViewModel()
-  
-  
-    
     var defaultImage = UIImage(systemName: "star")
     
     var body: some View {
         VStack {
+            //MARK: - Image
             ZStack(alignment: .bottomTrailing){
                 WebImage(url: URL(string: userViewModel.chatUser?.profileImageUrl ?? ""))
                     .renderingMode(.original)
@@ -31,7 +29,7 @@ struct NewIssueButton: View {
                     .clipShape(Circle())
                     .foregroundColor(.white)
                 
-                //Plus Button
+                //MARK: - PLUS(+) BUTTON
                 Button {
                     isShowNewIssuePage = true
                 } label: {
@@ -45,7 +43,7 @@ struct NewIssueButton: View {
                 }
             }//:ZStack
             
-            //New Issue Text
+            //MARK: - New Issue Text
             Text("New Issue")
                 .font(.title2)
             

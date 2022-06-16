@@ -4,16 +4,15 @@
 //
 //  Created by Tolga Kağan Aysu on 1.05.2022.
 //
+
 import SwiftUI
 
 struct IssueItem: View {
     
     @EnvironmentObject var issueViewModel: IssueViewModel
-    @State var isAnsweredIssue: Bool = false
     var issue: Issue
-    var isOwnIssue: Bool
  
-    
+    //MARK: - Label structure where posts will be displayed on "issue Page"
     var body: some View {
         ZStack(alignment: .leading) {
             Image(systemName: "circle.fill")

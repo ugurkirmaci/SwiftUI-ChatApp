@@ -15,6 +15,7 @@ struct IssuesGrid: View {
         GridItem(.flexible())
     ]
    
+    //MARK: - Show all posts in grid form
     var body: some View {
         ScrollView{
             LazyVGrid(columns: layout) {
@@ -23,7 +24,7 @@ struct IssuesGrid: View {
                         IssueDetails(issue: issue, isOwn: false)
                             .environmentObject(issueViewModel)
                     } label: {
-                        IssueItem(issue: issue, isOwnIssue: false)                        
+                        IssueItem(issue: issue)                        
                     }
                 }
             }
