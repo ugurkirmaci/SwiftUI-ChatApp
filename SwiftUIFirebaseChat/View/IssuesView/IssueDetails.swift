@@ -12,6 +12,14 @@ struct IssueDetails: View {
     @State var deleteAlert = false
     var issue: Issue
     var isOwn: Bool
+    
+    private var textFrameWidth: CGFloat {
+        getScreenBounds().width * 0.85
+    }
+    private var textFrameHeight: CGFloat {
+        getScreenBounds().height * 0.05
+    }
+    
     var body: some View {
         VStack {
             VStack(spacing: 5) {
@@ -31,6 +39,8 @@ struct IssueDetails: View {
                            alignment: .leading)                
             }
             Divider()
+            
+            //MARK: -
             //Kod parçacığı butonu ve kod texti eklenecek
             //            Text(issue.codeSnippet)
             //                .frame(width: getScreenBounds().width * 0.9,
@@ -64,9 +74,9 @@ struct IssueDetails: View {
         .toolbar(content: {
             ToolbarItemGroup(placement: .navigationBarTrailing) {
                 
-                // Clicked checkmark button
-                // succes -> answer changed
-                // fail -> show error message
+                //MARK: - Checkmark Button
+                //if user clicked own issues show checkmark button
+                //Clicked checkmark button
                 Button {
                     isAnswered.toggle()
                     issueViewModel.updateAnswer(issue: issue,isAnswered: isAnswered)
@@ -79,6 +89,8 @@ struct IssueDetails: View {
                 }
                 .disabled(!isOwn)
                 
+                //MARK: - TRASH BUTTON
+                //if user clicked own issues show trash button
                 // 1) Clicked trash button
                 // 2) Show confirmation alert
                 // 3) if answer is yes -> try delete issue
@@ -115,12 +127,4 @@ struct IssueDetails: View {
             isAnswered = issue.isAnswered
         }
     }
-    
-    private var textFrameWidth: CGFloat {
-        getScreenBounds().width * 0.85
-    }
-    private var textFrameHeight: CGFloat {
-        getScreenBounds().height * 0.05
-    }
-    
 }

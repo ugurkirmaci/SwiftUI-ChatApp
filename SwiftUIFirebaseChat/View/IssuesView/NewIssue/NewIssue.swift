@@ -18,7 +18,7 @@ struct NewIssue: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 5){
             
-            //Cancel Button
+            //MARK: -  Cancel Button
             HStack {
                 Spacer()
                 Button {
@@ -28,7 +28,7 @@ struct NewIssue: View {
                 }
             }.padding(.top,20)
             
-            
+            //MARK: - Text Labels
             VStack {
                 Group{
                     HStack {
@@ -71,6 +71,7 @@ struct NewIssue: View {
             Divider()
             CodeSnippetTextEditor(textEditor: $codeSnippet)
             
+            //MARK: - Create Button
             HStack {
                 Spacer()
                 CreateButton(isShowNewIssuePage: $isShowNewIssuePage, title: title, language: language, codeSnippet: codeSnippet)

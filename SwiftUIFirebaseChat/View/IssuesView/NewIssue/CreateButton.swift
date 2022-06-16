@@ -20,12 +20,13 @@ struct CreateButton: View {
     
     
     var body: some View {
+        //MARK: - Create Button
         // Clicked create button
-        // if labels are empty -> show 'label emty' alert
-        // not empty -> show confirmation 'create new issue' alert
+        // 1-if labels are empty -> show 'label emty' alert
+        // 2-not empty -> show confirmation 'create new issue' alert
         // if answer is yes -> try create issue
         // succes -> create issue and go to homepage
-        // fail -> show error message
+        // 3-fail -> show error message
         Button {
             if title == "" || language == "" {
                 isEmptyLabel = true
@@ -37,6 +38,9 @@ struct CreateButton: View {
         } label: {
             Text("Create")
         }
+        //MARK: - 1) Labels emty error
+        .alert("Labels can not be empty", isPresented: $isEmptyLabel) {}
+        //MARK: - 2) Confirmation "create new issue" alert
         .alert(Text("Create New Issue?"), isPresented: $isShowCreateNewIssueAlert) {
             Button("YES", role: .cancel) {
                 
@@ -55,10 +59,9 @@ struct CreateButton: View {
               
             }
         }
-        .alert("Labels can not be empty", isPresented: $isEmptyLabel) {}
+        //MARK: - 3) Failure error
         .alert(errorviewModel.fatalError?.localizedDescription ?? "Unknown Error", isPresented: $errorviewModel.isShowAlert) {
             Button {
-                errorviewModel.fatalError = nil
                 errorviewModel.isShowAlert = false
             } label: {
                 Text("OK")

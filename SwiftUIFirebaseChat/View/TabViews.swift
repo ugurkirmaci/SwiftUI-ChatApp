@@ -10,7 +10,7 @@ struct TabViews: View {
     @StateObject private var issueVM = IssueViewModel()
     @State private var selection: Tab = .mainMessageView
     
-    enum Tab {
+    private enum Tab {
         case issuePage
         case mainMessageView
     }

@@ -17,6 +17,8 @@ struct UserSelfIssueRow: View {
         HStack(alignment: .center) {
             NewIssueButton()
             Divider()
+            //MARK: - List of issue shared by the user
+           
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(alignment: .center, spacing: 5) {
                     if !(filteredIssueList.count == 0) {
@@ -25,12 +27,12 @@ struct UserSelfIssueRow: View {
                                 IssueDetails(issue: issue, isOwn: true)
                                     .environmentObject(issueViewModel)
                             } label: {
-                                IssueItem(issue: issue, isOwnIssue: true)
+                                IssueItem(issue: issue)
                             }
                         }
                     }
                     else {
-                     
+                //MARK: - if list is empty, show "list is empty" Text
                         Text("List is Empty")
                             .bold()
                             .font(.largeTitle)
