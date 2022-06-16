@@ -36,7 +36,6 @@ class CreateNewMessageViewModel: ObservableObject {
                 if user.uid != FirebaseManager.shared.auth.currentUser?.uid {
                     self.users.append(.init(data: data))
                 }
-                
             })
         }
     }
@@ -70,6 +69,9 @@ struct CreateNewMessageView: View {
                         HStack(spacing: 16) {
                             WebImage(url: URL(string: user.profileImageUrl))
                                 .resizable()
+                                .placeholder(content: {
+                                    ProgressView()
+                                })
                                 .scaledToFill()
                                 .frame(width: 50, height: 50)
                                 .clipped()
@@ -77,6 +79,7 @@ struct CreateNewMessageView: View {
                                 .overlay(RoundedRectangle(cornerRadius: 50)
                                             .stroke(Color(.label), lineWidth: 2)
                                 )
+                            
                             Text(user.email)
                                 .foregroundColor(Color(.label))
                             Spacer()
@@ -85,9 +88,9 @@ struct CreateNewMessageView: View {
                     Divider()//Alt cizgi
                         .padding(.vertical, 8)
 
-                    
                 }
             }.navigationTitle("New Message")
+                .navigationBarTitleDisplayMode(.inline)
             //navigationBarItems icin swiftui'da kullanmak icin .toolbar(content:) eklememiz gerekiyor.
                 .toolbar {
                     ToolbarItemGroup(placement: .navigationBarLeading) {
@@ -96,7 +99,6 @@ struct CreateNewMessageView: View {
                         } label: {
                             Text("Cencel")
                         }
-
                     }
                 }
         }

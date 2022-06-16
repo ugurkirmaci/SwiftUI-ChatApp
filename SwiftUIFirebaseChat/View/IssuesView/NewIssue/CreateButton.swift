@@ -13,11 +13,9 @@ struct CreateButton: View {
     @State var isShowCreateNewIssueAlert :Bool = false
     @State var isEmptyLabel: Bool = false
     @Binding var isShowNewIssuePage: Bool
-    
     let title: String
     let language: String
     let codeSnippet: String
-    
     
     var body: some View {
         //MARK: - Create Button
@@ -43,8 +41,6 @@ struct CreateButton: View {
         //MARK: - 2) Confirmation "create new issue" alert
         .alert(Text("Create New Issue?"), isPresented: $isShowCreateNewIssueAlert) {
             Button("YES", role: .cancel) {
-                
-                
                 viewModel.createNewIssue(title: title,
                                          language: language,
                                          codeSnippet: codeSnippet,
@@ -53,11 +49,7 @@ struct CreateButton: View {
                 isShowCreateNewIssueAlert = false
                 isShowNewIssuePage = false
             }
-            Button("NO", role: .destructive) {
-                print(errorviewModel.isShowAlert)
-                errorviewModel.isShowAlert = true
-              
-            }
+            Button("NO", role: .destructive) { /* No action */ }
         }
         //MARK: - 3) Failure error
         .alert(errorviewModel.fatalError?.localizedDescription ?? "Unknown Error", isPresented: $errorviewModel.isShowAlert) {
