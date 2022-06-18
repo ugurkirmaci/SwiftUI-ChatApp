@@ -29,6 +29,7 @@ struct UserSelfIssueRow: View {
                             } label: {
                                 IssueItem(issue: issue)
                             }
+                            .padding(.leading,10)
                         }
                     }
                     else {

@@ -29,8 +29,8 @@ struct IssueItem: View {
             Text(issue.programmingLanguage)
                 .frame(width: 110, height: 20, alignment: .center)
                 .foregroundColor(.primary)
-                .font(.headline)
+                .font(.footnote)
         }
-        .padding(20)
+        .padding(.vertical, 20)
     }
 }
