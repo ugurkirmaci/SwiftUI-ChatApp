@@ -192,7 +192,7 @@ struct LoginView: View {
                     return
                 }
                 self.loginStatusMessage = "Succcessfully stored image with url: \(url?.absoluteString ?? "")"
-                print(url?.absoluteString)
+    
                 
                 guard let url = url else { return }
                 storeUserInformation(imageProfileUrl: url)
