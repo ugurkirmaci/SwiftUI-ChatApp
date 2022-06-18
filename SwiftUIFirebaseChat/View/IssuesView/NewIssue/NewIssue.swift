@@ -37,7 +37,7 @@ struct NewIssue: View {
                                    height: getScreenBounds().height * 0.05,
                                    alignment: .leading)
                             .foregroundColor(.red)
-                        Text("Email")
+                        Text(email)
                             .frame(width: getScreenBounds().width * 0.7,
                                    height: getScreenBounds().height * 0.05,
                                    alignment: Alignment.leading)
