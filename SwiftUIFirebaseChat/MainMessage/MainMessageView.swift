@@ -295,6 +295,7 @@ struct MainMessageView: View {
                 .padding(.horizontal)
                 .shadow(radius: 15)
         }
+        .padding()
         .fullScreenCover(isPresented: $shouldShowNewMessageScreen, onDismiss: nil) {
             CreateNewMessageView(didSelectNewUser: { user in
                 print(user.email)//Artik kullanicilar secili oldugunda icine giricek.
