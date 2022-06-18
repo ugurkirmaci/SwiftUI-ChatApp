@@ -7,6 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		786E7F5A285E3BE700C5A87D /* IssueViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786E7F59285E3BE700C5A87D /* IssueViewModel.swift */; };
+		786E7F6E285E3C1000C5A87D /* Issue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786E7F5B285E3C1000C5A87D /* Issue.swift */; };
+		786E7F6F285E3C1000C5A87D /* TabViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786E7F5D285E3C1000C5A87D /* TabViews.swift */; };
+		786E7F70285E3C1000C5A87D /* CodeSnippet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786E7F5F285E3C1000C5A87D /* CodeSnippet.swift */; };
+		786E7F71285E3C1000C5A87D /* NewIssueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786E7F60285E3C1000C5A87D /* NewIssueButton.swift */; };
+		786E7F72285E3C1000C5A87D /* IssuePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786E7F61285E3C1000C5A87D /* IssuePage.swift */; };
+		786E7F73285E3C1000C5A87D /* NewIssue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786E7F63285E3C1000C5A87D /* NewIssue.swift */; };
+		786E7F74285E3C1000C5A87D /* CreateButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786E7F64285E3C1000C5A87D /* CreateButton.swift */; };
+		786E7F75285E3C1000C5A87D /* CodeSnippetTextEditör.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786E7F65285E3C1000C5A87D /* CodeSnippetTextEditör.swift */; };
+		786E7F76285E3C1000C5A87D /* IssueDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786E7F66285E3C1000C5A87D /* IssueDetails.swift */; };
+		786E7F77285E3C1000C5A87D /* UserSelfIssueRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786E7F67285E3C1000C5A87D /* UserSelfIssueRow.swift */; };
+		786E7F78285E3C1000C5A87D /* IssueItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786E7F68285E3C1000C5A87D /* IssueItem.swift */; };
+		786E7F79285E3C1000C5A87D /* IssuesGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786E7F69285E3C1000C5A87D /* IssuesGrid.swift */; };
+		786E7F7A285E3C1000C5A87D /* ScreenBounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786E7F6B285E3C1000C5A87D /* ScreenBounds.swift */; };
+		786E7F7B285E3C1000C5A87D /* CustomizedErrorAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786E7F6C285E3C1000C5A87D /* CustomizedErrorAlert.swift */; };
+		786E7F7C285E3C1000C5A87D /* HiddenExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786E7F6D285E3C1000C5A87D /* HiddenExtension.swift */; };
+		786E7F7F285E3E8300C5A87D /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = 786E7F7E285E3E8300C5A87D /* MarkdownUI */; };
 		F82B786B277DE43F00454636 /* ChatLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82B786A277DE43F00454636 /* ChatLogView.swift */; };
 		F852497E2783376300876F9C /* RecentMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F852497D2783376300876F9C /* RecentMessage.swift */; };
 		F8524980278337BF00876F9C /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F852497F278337BF00876F9C /* ChatMessage.swift */; };
@@ -30,6 +47,22 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		786E7F59285E3BE700C5A87D /* IssueViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IssueViewModel.swift; sourceTree = "<group>"; };
+		786E7F5B285E3C1000C5A87D /* Issue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Issue.swift; sourceTree = "<group>"; };
+		786E7F5D285E3C1000C5A87D /* TabViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabViews.swift; sourceTree = "<group>"; };
+		786E7F5F285E3C1000C5A87D /* CodeSnippet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeSnippet.swift; sourceTree = "<group>"; };
+		786E7F60285E3C1000C5A87D /* NewIssueButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewIssueButton.swift; sourceTree = "<group>"; };
+		786E7F61285E3C1000C5A87D /* IssuePage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IssuePage.swift; sourceTree = "<group>"; };
+		786E7F63285E3C1000C5A87D /* NewIssue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewIssue.swift; sourceTree = "<group>"; };
+		786E7F64285E3C1000C5A87D /* CreateButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateButton.swift; sourceTree = "<group>"; };
+		786E7F65285E3C1000C5A87D /* CodeSnippetTextEditör.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CodeSnippetTextEditör.swift"; sourceTree = "<group>"; };
+		786E7F66285E3C1000C5A87D /* IssueDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IssueDetails.swift; sourceTree = "<group>"; };
+		786E7F67285E3C1000C5A87D /* UserSelfIssueRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSelfIssueRow.swift; sourceTree = "<group>"; };
+		786E7F68285E3C1000C5A87D /* IssueItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IssueItem.swift; sourceTree = "<group>"; };
+		786E7F69285E3C1000C5A87D /* IssuesGrid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IssuesGrid.swift; sourceTree = "<group>"; };
+		786E7F6B285E3C1000C5A87D /* ScreenBounds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenBounds.swift; sourceTree = "<group>"; };
+		786E7F6C285E3C1000C5A87D /* CustomizedErrorAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomizedErrorAlert.swift; sourceTree = "<group>"; };
+		786E7F6D285E3C1000C5A87D /* HiddenExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HiddenExtension.swift; sourceTree = "<group>"; };
 		F82B786A277DE43F00454636 /* ChatLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogView.swift; sourceTree = "<group>"; };
 		F852497D2783376300876F9C /* RecentMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentMessage.swift; sourceTree = "<group>"; };
 		F852497F278337BF00876F9C /* ChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
@@ -56,6 +89,7 @@
 				F8D8D844277CD90E00244763 /* SDWebImageSwiftUI in Frameworks */,
 				F8524989278385E000876F9C /* FirebaseFirestoreSwift-Beta in Frameworks */,
 				F8524985278385E000876F9C /* FirebaseAuth in Frameworks */,
+				786E7F7F285E3E8300C5A87D /* MarkdownUI in Frameworks */,
 				F852498B278385E000876F9C /* FirebaseStorage in Frameworks */,
 				F8524987278385E000876F9C /* FirebaseFirestore in Frameworks */,
 			);
@@ -64,6 +98,58 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		786E7F58285E3BE700C5A87D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				786E7F59285E3BE700C5A87D /* IssueViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		786E7F5C285E3C1000C5A87D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				786E7F5D285E3C1000C5A87D /* TabViews.swift */,
+				786E7F5E285E3C1000C5A87D /* IssuesView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		786E7F5E285E3C1000C5A87D /* IssuesView */ = {
+			isa = PBXGroup;
+			children = (
+				786E7F5F285E3C1000C5A87D /* CodeSnippet.swift */,
+				786E7F60285E3C1000C5A87D /* NewIssueButton.swift */,
+				786E7F61285E3C1000C5A87D /* IssuePage.swift */,
+				786E7F62285E3C1000C5A87D /* NewIssue */,
+				786E7F66285E3C1000C5A87D /* IssueDetails.swift */,
+				786E7F67285E3C1000C5A87D /* UserSelfIssueRow.swift */,
+				786E7F68285E3C1000C5A87D /* IssueItem.swift */,
+				786E7F69285E3C1000C5A87D /* IssuesGrid.swift */,
+			);
+			path = IssuesView;
+			sourceTree = "<group>";
+		};
+		786E7F62285E3C1000C5A87D /* NewIssue */ = {
+			isa = PBXGroup;
+			children = (
+				786E7F63285E3C1000C5A87D /* NewIssue.swift */,
+				786E7F64285E3C1000C5A87D /* CreateButton.swift */,
+				786E7F65285E3C1000C5A87D /* CodeSnippetTextEditör.swift */,
+			);
+			path = NewIssue;
+			sourceTree = "<group>";
+		};
+		786E7F6A285E3C1000C5A87D /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				786E7F6B285E3C1000C5A87D /* ScreenBounds.swift */,
+				786E7F6C285E3C1000C5A87D /* CustomizedErrorAlert.swift */,
+				786E7F6D285E3C1000C5A87D /* HiddenExtension.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		F82B7869277DE41D00454636 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +178,9 @@
 		F8D4E739277A0DF000F55027 /* SwiftUIFirebaseChat */ = {
 			isa = PBXGroup;
 			children = (
+				786E7F6A285E3C1000C5A87D /* Helpers */,
+				786E7F5C285E3C1000C5A87D /* View */,
+				786E7F58285E3BE700C5A87D /* ViewModel */,
 				F8D8D845277CEEB400244763 /* Model */,
 				F8D8D83F277CBA1F00244763 /* Utils */,
 				F8D8D83C277CA67A00244763 /* MainMessage */,
@@ -135,6 +224,7 @@
 		F8D8D845277CEEB400244763 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				786E7F5B285E3C1000C5A87D /* Issue.swift */,
 				F8D8D846277CEEE500244763 /* ChatUser.swift */,
 				F852497F278337BF00876F9C /* ChatMessage.swift */,
 				F852497D2783376300876F9C /* RecentMessage.swift */,
@@ -172,6 +262,7 @@
 				F8524986278385E000876F9C /* FirebaseFirestore */,
 				F8524988278385E000876F9C /* FirebaseFirestoreSwift-Beta */,
 				F852498A278385E000876F9C /* FirebaseStorage */,
+				786E7F7E285E3E8300C5A87D /* MarkdownUI */,
 			);
 			productName = SwiftUIFirebaseChat;
 			productReference = F8D4E737277A0DF000F55027 /* SwiftUIFirebaseChat.app */;
@@ -204,6 +295,7 @@
 			packageReferences = (
 				F8D8D842277CD90E00244763 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 				F8524983278385E000876F9C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				786E7F7D285E3E8200C5A87D /* XCRemoteSwiftPackageReference "MarkdownUI" */,
 			);
 			productRefGroup = F8D4E738277A0DF000F55027 /* Products */;
 			projectDirPath = "";
@@ -234,15 +326,31 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8D8D847277CEEE500244763 /* ChatUser.swift in Sources */,
+				786E7F78285E3C1000C5A87D /* IssueItem.swift in Sources */,
 				F82B786B277DE43F00454636 /* ChatLogView.swift in Sources */,
+				786E7F72285E3C1000C5A87D /* IssuePage.swift in Sources */,
 				F852497E2783376300876F9C /* RecentMessage.swift in Sources */,
+				786E7F6E285E3C1000C5A87D /* Issue.swift in Sources */,
 				F852498227833B6B00876F9C /* FirebaseConstants.swift in Sources */,
+				786E7F5A285E3BE700C5A87D /* IssueViewModel.swift in Sources */,
+				786E7F7B285E3C1000C5A87D /* CustomizedErrorAlert.swift in Sources */,
+				786E7F70285E3C1000C5A87D /* CodeSnippet.swift in Sources */,
+				786E7F73285E3C1000C5A87D /* NewIssue.swift in Sources */,
+				786E7F77285E3C1000C5A87D /* UserSelfIssueRow.swift in Sources */,
 				F8524980278337BF00876F9C /* ChatMessage.swift in Sources */,
 				F8D4E750277A6D6100F55027 /* ImagePicker.swift in Sources */,
+				786E7F75285E3C1000C5A87D /* CodeSnippetTextEditör.swift in Sources */,
+				786E7F7C285E3C1000C5A87D /* HiddenExtension.swift in Sources */,
+				786E7F74285E3C1000C5A87D /* CreateButton.swift in Sources */,
 				F8D8D83E277CA72000244763 /* MainMessageView.swift in Sources */,
 				F8D8D841277CBA4E00244763 /* FirebaseManager.swift in Sources */,
 				F8D8D84A277CF53400244763 /* CreateNewMessageView.swift in Sources */,
 				F8D4E73D277A0DF000F55027 /* LoginView.swift in Sources */,
+				786E7F6F285E3C1000C5A87D /* TabViews.swift in Sources */,
+				786E7F76285E3C1000C5A87D /* IssueDetails.swift in Sources */,
+				786E7F79285E3C1000C5A87D /* IssuesGrid.swift in Sources */,
+				786E7F71285E3C1000C5A87D /* NewIssueButton.swift in Sources */,
+				786E7F7A285E3C1000C5A87D /* ScreenBounds.swift in Sources */,
 				F8D4E73B277A0DF000F55027 /* SwiftUIFirebaseChatApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -391,7 +499,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -420,7 +528,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -448,6 +556,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		786E7F7D285E3E8200C5A87D /* XCRemoteSwiftPackageReference "MarkdownUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/gonzalezreal/MarkdownUI.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		F8524983278385E000876F9C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
@@ -467,6 +583,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		786E7F7E285E3E8300C5A87D /* MarkdownUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 786E7F7D285E3E8200C5A87D /* XCRemoteSwiftPackageReference "MarkdownUI" */;
+			productName = MarkdownUI;
+		};
 		F8524984278385E000876F9C /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F8524983278385E000876F9C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
