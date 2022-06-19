@@ -40,33 +40,7 @@ struct IssueDetails: View {
             }
             Divider()
             
-            //MARK: -
-            //Kod parçacığı butonu ve kod texti eklenecek
-            //            Text(issue.codeSnippet)
-            //                .frame(width: getScreenBounds().width * 0.9,
-            //                       height: getScreenBounds().height * 0.6,
-            //                       alignment: .center)
-            
-           
-            NavigationLink {
-                CodeSnippet(codeSnippetString: issue.codeSnippet )
-            } label: {
-               
-                    Image(systemName: "c.square.fill")
-                    .resizable()
-                    .frame(width: 50, height: 50)
-                    Image(systemName: "o.square.fill")
-                    .resizable()
-                    .frame(width: 50, height: 50)
-                    Image(systemName: "d.square.fill")
-                    .resizable()
-                    .frame(width: 50, height: 50)
-                    Image(systemName: "e.square.fill")
-                    .resizable()
-                    .frame(width: 50, height: 50)
-                
-                
-            }
+         
 
             Spacer()
             

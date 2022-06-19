@@ -16,6 +16,7 @@ struct CreateButton: View {
     let title: String
     let language: String
     let codeSnippet: String
+    let description: String
     
     var body: some View {
         //MARK: - Create Button
@@ -43,7 +44,7 @@ struct CreateButton: View {
             Button("YES", role: .cancel) {
                 viewModel.createNewIssue(title: title,
                                          language: language,
-                                         codeSnippet: codeSnippet,
+                                         codeSnippet: codeSnippet, description: description,
                                          user: user.chatUser!)
                 
                 isShowCreateNewIssueAlert = false
@@ -65,6 +66,6 @@ struct CreateButton: View {
 struct CreateButton_Previews: PreviewProvider {
     @State static var test: Bool = false
     static var previews: some View {
-        CreateButton(isShowNewIssuePage: $test, title: "Title", language: "Language", codeSnippet: "" )
+        CreateButton(isShowNewIssuePage: $test, title: "Title", language: "Language", codeSnippet: "", description: "description")
     }
 }

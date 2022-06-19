@@ -12,4 +12,6 @@ struct Issue:Decodable, Identifiable{
     let programmingLanguage: String
     let codeSnippet: String
     let isAnswered: Bool
+    let description: String
+    let date: String
 }

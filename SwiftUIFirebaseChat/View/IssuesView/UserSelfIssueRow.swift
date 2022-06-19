@@ -10,15 +10,15 @@ struct UserSelfIssueRow: View {
     @State var isActiveNavigation = false
     
     private var filteredIssueList: [Issue] {
-        return issueViewModel.issuesList.filter { $0.user.email == Auth.auth().currentUser?.email }
+        return issueViewModel.sortedlist.filter { $0.user.email == Auth.auth().currentUser?.email }
     }
-
+    
     var body: some View {
         HStack(alignment: .center) {
             NewIssueButton()
             Divider()
             //MARK: - List of issue shared by the user
-           
+            
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(alignment: .center, spacing: 5) {
                     if !(filteredIssueList.count == 0) {
@@ -33,7 +33,7 @@ struct UserSelfIssueRow: View {
                         }
                     }
                     else {
-                //MARK: - if list is empty, show "list is empty" Text
+                        //MARK: - if list is empty, show "list is empty" Text
                         Text("List is Empty")
                             .bold()
                             .font(.largeTitle)

@@ -11,7 +11,7 @@ struct CodeSnippetTextEditor: View {
 
         TextEditor(text: $textEditor)
             .frame(width: getScreenBounds().width * 0.9,
-                   height: getScreenBounds().height * 0.6,
+                   height: getScreenBounds().height * 0.8,
                    alignment: .center)
             .lineSpacing(10)
             .border(Color.primary)
