@@ -13,7 +13,18 @@ class IssueViewModel: ObservableObject {
     @Published var issuesList: [Issue] = []
     let db = Firestore.firestore()
     @ObservedObject var alertViewModel = AlertViewModel()
+    
+    var sortedlist: [Issue] {
+            get {
+                issuesList.sorted(by: { $0.date > $1.date })
+            }
+            set {
+                issuesList = newValue
+            }
+        }
+    
 }
+
 
 
 //Check if issue is answered
@@ -30,7 +41,7 @@ extension IssueViewModel {
 
 //Add issue item to firebase
 extension IssueViewModel {
-    func createNewIssue(title: String, language: String,codeSnippet: String, user: ChatUser) {
+    func createNewIssue(title: String, language: String,codeSnippet: String,description: String, user: ChatUser) {
         let issueID = UUID().uuidString
         let ref = db.collection("issues").document(issueID)
         let data = ["user":["id":user.uid,
@@ -39,7 +50,9 @@ extension IssueViewModel {
                     "title": title,
                     "programmingLanguage": language,
                     "isAnswered": false,
-                    "codeSnippet":codeSnippet] as [String : Any]
+                    "codeSnippet":codeSnippet,
+                    "description": description,
+                    "date": Date.now.formatted(date: .long, time: .shortened)] as [String : Any]
         
         DispatchQueue.main.async {
             ref.setData(data) { error in
@@ -104,13 +117,17 @@ extension IssueViewModel {
                 let programmingLanguage = data["programmingLanguage"] as? String ?? ""
                 let isAnswered = data["isAnswered"] as? Bool ?? false
                 let codeSnippet = data["codeSnippet"] as? String ?? ""
+                let description = data["description"] as? String ?? ""
+                let date = data["date"] as? String ?? ""
                 let userData = data["user"]
                 return Issue(id: id,
                              user: ChatUser(data: userData as? [String : Any] ?? [:]),
                              title: title,
                              programmingLanguage: programmingLanguage,
                              codeSnippet: codeSnippet,
-                             isAnswered: isAnswered)
+                             isAnswered: isAnswered,
+                             description: description,
+                             date: date)
             }
         }
     }
