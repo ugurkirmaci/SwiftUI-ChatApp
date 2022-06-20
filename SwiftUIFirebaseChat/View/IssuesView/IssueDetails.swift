@@ -13,35 +13,44 @@ struct IssueDetails: View {
     var issue: Issue
     var isOwn: Bool
     
-    private var textFrameWidth: CGFloat {
-        getScreenBounds().width * 0.85
-    }
-    private var textFrameHeight: CGFloat {
-        getScreenBounds().height * 0.05
-    }
-    
     var body: some View {
         VStack {
-            VStack(spacing: 5) {
-                Text("From:  \(issue.user.email)" )
-                    .frame(width: textFrameWidth ,
-                           height: textFrameHeight,
-                           alignment: .leading)
-                
-                Text("Title: \(issue.title)")
-                    .frame(width: textFrameWidth ,
-                           height: textFrameHeight,
-                           alignment: .leading)
-                
-                Text("Language: \(issue.programmingLanguage)")
-                    .frame(width: textFrameWidth ,
-                           height: textFrameHeight,
-                           alignment: .leading)                
+            Group{
+                HStack {
+                    Text("From: ")
+                        .frame(width: getScreenBounds().width * 0.2,
+                               height: getScreenBounds().height * 0.05,
+                               alignment: .leading)
+                        .foregroundColor(.red)
+                    Text(issue.user.email)
+                        .frame(width: getScreenBounds().width * 0.7,
+                               height: getScreenBounds().height * 0.05,
+                               alignment: Alignment.leading)
+                }
+                HStack{
+                    Text("Title: ")
+                        .frame(width: getScreenBounds().width * 0.2
+                               , height: getScreenBounds().height * 0.05,
+                               alignment: .leading)
+                        .foregroundColor(.red)
+                    Text(issue.title)
+                        .frame(width: getScreenBounds().width * 0.7,
+                               height: getScreenBounds().height * 0.05,
+                               alignment: Alignment.leading)
+                }
+                HStack{
+                    Text("Language:")
+                        .frame(width: getScreenBounds().width * 0.2,
+                               height: getScreenBounds().height * 0.05,
+                               alignment: .leading)
+                        .foregroundColor(.red)
+                    Text(issue.programmingLanguage)
+                        .frame(width: getScreenBounds().width * 0.7,
+                               height: getScreenBounds().height * 0.05,
+                               alignment: Alignment.leading)
+                }
             }
             Divider()
-            
-         
-
             Spacer()
             
         }//:VStack
@@ -82,12 +91,12 @@ struct IssueDetails: View {
                 }
                 .disabled(!isOwn)
                 .alert(Text("The post will be deleted. Are you sure?") ,isPresented: $deleteAlert) {
-                    Button(role: .destructive) {
+                    Button(role: .cancel) {
                         issueViewModel.deleteIssue(issue: issue)
                     } label: {
                         Text("YES")
                     }
-                    Button(role: .cancel) {
+                    Button(role: .destructive) {
                         deleteAlert = false
                     } label: {
                         Text("NO")
