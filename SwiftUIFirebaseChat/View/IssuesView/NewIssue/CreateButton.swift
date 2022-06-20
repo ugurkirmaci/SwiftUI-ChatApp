@@ -32,11 +32,21 @@ struct CreateButton: View {
             }
             else {
                 isShowCreateNewIssueAlert = true
-              
+                
             }
         } label: {
             Text("Create")
+                .frame(width: 120,height: 50)
+                .background(
+                    RoundedRectangle(
+                        cornerRadius: 20,
+                        style: .circular
+                    ).stroke(Color.accentColor))
+            
+                .font(.title)
+            
         }
+        .padding(.vertical,20)
         //MARK: - 1) Labels emty error
         .alert("Labels can not be empty", isPresented: $isEmptyLabel) {}
         //MARK: - 2) Confirmation "create new issue" alert
