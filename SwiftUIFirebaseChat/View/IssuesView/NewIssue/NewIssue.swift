@@ -19,15 +19,6 @@ struct NewIssue: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 5){
             
-            //MARK: -  Cancel Button
-            HStack {
-                Spacer()
-                Button {
-                    isShowNewIssuePage = false
-                } label: {
-                    Text("Cancel")
-                }
-            }.padding(.top,20)
             
             //MARK: - Text Labels
             VStack {
@@ -74,17 +65,22 @@ struct NewIssue: View {
             NavigationLink {
                 CodeSnippetTextEditor(textEditor: $codeSnippet)
             } label: {
-                Image(systemName: "star")
+                Image(systemName: "rectangle.portrait.and.arrow.right")
                     .resizable()
                     .frame(width: getScreenBounds().width * 0.1,
                            height: getScreenBounds().width * 0.1)
                     .padding()
             }
-            Text("Description")
-                .frame(width: getScreenBounds().width * 0.3,
-                       height: getScreenBounds().height * 0.05,
-                       alignment: .leading)
-                .foregroundColor(.red)
+            Divider()
+            HStack {
+                Text("Description")
+                    .frame(height: getScreenBounds().height * 0.05,
+                           alignment: .leading)
+                    .foregroundColor(.red)
+                Image(systemName: "arrow.turn.right.down")
+                    .frame(height: getScreenBounds().height * 0.05)
+                Spacer()
+            }
             TextEditor(text: $description)
                 .frame(width: getScreenBounds().width * 0.9,
                        height: getScreenBounds().height * 0.3,
@@ -93,7 +89,6 @@ struct NewIssue: View {
                 .border(.secondary)
                 .multilineTextAlignment(.leading)
                 .font(.footnote)
-
             
             
             //MARK: - Create Button
@@ -107,7 +102,15 @@ struct NewIssue: View {
             Spacer()
         }//:VStack
         .padding()
-        .navigationBarHidden(true)
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            //MARK: -  Cancel Button
+            Button {
+                isShowNewIssuePage = false
+            } label: {
+                Text("Cancel")
+            }
+        }
     }
 }
 
