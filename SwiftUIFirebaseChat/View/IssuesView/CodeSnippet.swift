@@ -6,35 +6,16 @@
 //
 
 import SwiftUI
-import MarkdownUI
 struct CodeSnippet: View {
     let codeSnippetString: String
-  
-   
+    
     var body: some View {
-        ScrollView([.vertical,.horizontal]) {
-            Markdown(
-                
-                   codeSnippetString
-            )
-                                .markdownStyle(
-                    MarkdownStyle(
-                        font: .system(.body, design: .serif ),
-                        foregroundColor: .indigo,
-                        measurements: .init(
-                            codeFontScale: 0.8,
-                            headingSpacing: 0.05
-                        )
-                    )
-                )
-            
-            
+        ScrollView([.vertical,.horizontal],showsIndicators: true) {
+            Text(codeSnippetString)
         }.frame(width: .none,
                 height: .none,
                 alignment: .topLeading )
-            .padding(.top)
-            
-
+        .padding(.top)
     }
 }
 

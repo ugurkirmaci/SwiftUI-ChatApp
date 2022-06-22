@@ -14,7 +14,8 @@ struct IssueDetails: View {
     var isOwn: Bool
     
     var body: some View {
-        VStack {
+        VStack(alignment: .leading) {
+            //MARK: - Text Labels
             Group{
                 HStack {
                     Text("From: ")
@@ -51,6 +52,32 @@ struct IssueDetails: View {
                 }
             }
             Divider()
+            
+            //MARK: - CodeSnippet Navigation Link
+            NavigationLink {
+                CodeSnippet(codeSnippetString: issue.codeSnippet)
+            } label: {
+                Image(systemName: "rectangle.portrait.and.arrow.right")
+                    .resizable()
+                    .frame(width: getScreenBounds().width * 0.1,
+                           height: getScreenBounds().width * 0.1)
+                    .padding()
+            }
+            Divider()
+            //MARK: - Description text label
+            HStack{
+                Text("Description")
+                    .frame(height: getScreenBounds().height * 0.05,
+                           alignment: .leading)
+                    .foregroundColor(.red)
+                Image(systemName: "arrow.turn.right.down")
+                    .frame(height: getScreenBounds().height * 0.05)
+                
+            }
+            Text(issue.description)
+                .frame(width: getScreenBounds().width * 0.9,
+                       height: .none,
+                       alignment: .leading)
             Spacer()
             
         }//:VStack
@@ -82,7 +109,7 @@ struct IssueDetails: View {
                 Button {
                     //Action
                     deleteAlert = true
-                   
+                    
                 } label: {
                     Image(systemName: "trash")
                         .resizable()
