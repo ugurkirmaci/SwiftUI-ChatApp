@@ -12,8 +12,6 @@ class IssueViewModel: ObservableObject {
     
     @Published var issuesList: [Issue] = []
     let db = Firestore.firestore()
-    @ObservedObject var alertViewModel = AlertViewModel()
-    
     var sortedlist: [Issue] {
             get {
                 issuesList.sorted(by: { $0.date > $1.date })
@@ -58,10 +56,7 @@ extension IssueViewModel {
             ref.setData(data) { error in
                 if let error = error {
                     print(error.localizedDescription)
-                    print(CustomizedError.createError.localizedDescription)
-                    self.alertViewModel.fatalError = CustomizedError.createError
                 }
-                self.alertViewModel.fatalError = CustomizeAlert.createSuccesful
             }
         }
     }
@@ -73,11 +68,6 @@ extension IssueViewModel {
         db.collection("issues").document(issue.id).delete(){ error in
             if let error = error {
                 print(error.localizedDescription)
-                print(CustomizedError.deleteError.localizedDescription)
-                self.alertViewModel.fatalError = CustomizedError.deleteError
-            }
-            else {
-                self.alertViewModel.fatalError = CustomizeAlert.deleteSuccessful
             }
         }
     }
@@ -90,10 +80,6 @@ extension IssueViewModel {
         referance.updateData(["isAnswered": isAnswered]) { error in
             if let err = error {
                 print(err.localizedDescription)
-                print(CustomizedError.answerUpdateError)
-                self.alertViewModel.fatalError = CustomizedError.answerUpdateError
-            }else {
-                self.alertViewModel.fatalError = CustomizeAlert.answerUpdateSuccesful
             }
         }
     }
@@ -105,8 +91,6 @@ extension IssueViewModel {
         db.collection("issues").addSnapshotListener { documentSnapshot, error in
             guard let document = documentSnapshot?.documents else {
                 print("Error fetching document: \(error!)")
-                print(CustomizedError.fetchDataError)
-                self.alertViewModel.fatalError = CustomizedError.fetchDataError
                 return
             }
             

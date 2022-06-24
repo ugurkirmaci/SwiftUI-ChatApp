@@ -9,9 +9,9 @@ import SwiftUI
 struct CreateButton: View {
     @ObservedObject var user = MainMessageViewModel()
     @EnvironmentObject var viewModel: IssueViewModel
-    @ObservedObject var errorviewModel = AlertViewModel()
-    @State var isShowCreateNewIssueAlert :Bool = false
+    @State var isShowCreateNewIssueAlert: Bool = false
     @State var isEmptyLabel: Bool = false
+    @State var failureErrorAlert: Bool = false
     @Binding var isShowNewIssuePage: Bool
     let title: String
     let language: String
@@ -32,7 +32,6 @@ struct CreateButton: View {
             }
             else {
                 isShowCreateNewIssueAlert = true
-                
             }
         } label: {
             Text("Create")
@@ -61,14 +60,6 @@ struct CreateButton: View {
                 isShowNewIssuePage = false
             }
             Button("NO", role: .destructive) { /* No action */ }
-        }
-        //MARK: - 3) Failure error
-        .alert(errorviewModel.fatalError?.localizedDescription ?? "Unknown Error", isPresented: $errorviewModel.isShowAlert) {
-            Button {
-                errorviewModel.isShowAlert = false
-            } label: {
-                Text("OK")
-            }
         }
     }
 }
