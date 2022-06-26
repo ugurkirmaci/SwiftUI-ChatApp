@@ -19,7 +19,7 @@ struct IssuesGrid: View {
     var body: some View {
         ScrollView{
             LazyVGrid(columns: layout) {
-                ForEach(issueViewModel.sortedlist) {issue in
+                ForEach(issueViewModel.sortIssue(sortBy: .date) ) {issue in
                     NavigationLink{
                         IssueDetails(issue: issue, isOwn: false)
                             .environmentObject(issueViewModel)

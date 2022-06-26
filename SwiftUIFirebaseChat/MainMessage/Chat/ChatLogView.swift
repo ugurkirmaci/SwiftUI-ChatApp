@@ -247,9 +247,6 @@ struct ChatLogView: View {
     
     private var chatBottomBar: some View {
         HStack(spacing: 16) {
-            Image(systemName: "photo.on.rectangle")
-                .font(.system(size: 24))
-                .foregroundColor(Color(.darkGray))
             ZStack {
                 DescriptionPlaceholder()
                 TextEditor(text: $vm.chatText)
@@ -259,13 +256,12 @@ struct ChatLogView: View {
             Button {
                 vm.handleSend()
             } label: {
-                Text("Send")
-                    .foregroundColor(.white)
+                Image(systemName: "arrowshape.turn.up.right.circle.fill")
+                    .resizable()
+                    .frame(width: 35, height: 35, alignment: .center)
             }
             .padding(.horizontal)
             .padding(.vertical, 8)
-            .background(Color.blue)
-            .cornerRadius(8)
 
         }
         .padding(.horizontal)
@@ -318,7 +314,7 @@ struct MessageView: View {
 private struct DescriptionPlaceholder: View {
     var body: some View {
         HStack {
-            Text("Description")
+            Text("Write Message")
                 .foregroundColor(Color(.gray))
                 .font(.system(size: 17))
                 .padding(.leading, 5)
