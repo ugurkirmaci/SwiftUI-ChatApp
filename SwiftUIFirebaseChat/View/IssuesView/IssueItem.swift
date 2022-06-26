@@ -33,14 +33,3 @@ struct IssueItem: View {
         .padding(.vertical, 20)
     }
 }
-
-struct IssueItem_Previews: PreviewProvider {
-    static var previews: some View {
-        Group {
-            IssueItem(issue: issueTestObject().issue1)
-            IssueItem(issue: issueTestObject().issue1)
-                .previewDevice("iPhone 8")
-            
-        }
-    }
-}

@@ -143,10 +143,3 @@ struct IssueDetails: View {
         }
     }
 }
-
-struct MyPreviewProvider_Previews: PreviewProvider {
-    static var previews: some View {
-        IssueDetails(issue: issueTestObject.share.issue1, isOwn: false)
-            .environmentObject(IssueViewModel())
-    }
-}
