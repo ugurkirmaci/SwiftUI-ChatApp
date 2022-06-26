@@ -254,7 +254,9 @@ struct ChatLogView: View {
             }
             .frame(height: 40)
             Button {
-                vm.handleSend()
+                if vm.chatText != "" {
+                    vm.handleSend()
+                }
             } label: {
                 Image(systemName: "arrowshape.turn.up.right.circle.fill")
                     .resizable()
