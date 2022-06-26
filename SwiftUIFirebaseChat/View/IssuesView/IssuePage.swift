@@ -18,10 +18,11 @@ struct IssuePage: View {
                 Divider()
                 IssuesGrid()
             }
-            .navigationBarHidden(true)
+            .navigationBarTitleDisplayMode(.inline)
             .task {
                 issueViewModel.getDataFromFirebase()
             }
+            .navigationTitle("Feed")
         }
     }
 }

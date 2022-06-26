@@ -36,13 +36,10 @@ struct CreateButton: View {
         } label: {
             Text("Create")
                 .frame(width: 120,height: 50)
-                .background(
-                    RoundedRectangle(
-                        cornerRadius: 20,
-                        style: .circular
-                    ).stroke(Color.accentColor))
-            
-                .font(.title)
+                .foregroundColor(.white)
+                .background(Color.blue)
+                .clipShape(Capsule())
+                .font(.footnote)
             
         }
         .padding(.vertical,20)

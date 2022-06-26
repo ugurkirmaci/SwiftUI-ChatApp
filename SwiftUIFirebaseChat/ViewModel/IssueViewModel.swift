@@ -11,6 +11,8 @@ import Firebase
 class IssueViewModel: ObservableObject {
     
     @Published var issuesList: [Issue] = []
+    @Published var selectedIssue: Issue?
+    
     let db = Firestore.firestore()
     var sortedlist: [Issue] {
             get {
@@ -23,7 +25,27 @@ class IssueViewModel: ObservableObject {
     
 }
 
+extension IssueViewModel {
+    func sortIssue(sortBy: sortIssue ) -> [Issue]{
+        switch sortBy {
+        case .date:
+            return issuesList.sorted(by: { $0.date > $1.date })
+        case .title:
+            return issuesList.sorted(by: {$0.title > $1.title })
+        case .language:
+            return issuesList.sorted(by: {$0.programmingLanguage > $1.programmingLanguage })
+        case .answered:
+            return issuesList.filter( {$0.isAnswered})
+        }
+    }
+}
 
+enum sortIssue {
+    case title
+    case date
+    case language
+    case answered
+}
 
 //Check if issue is answered
 extension IssueViewModel {
