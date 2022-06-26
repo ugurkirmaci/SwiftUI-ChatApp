@@ -18,19 +18,21 @@ struct IssuePage: View {
                 Divider()
                 IssuesGrid()
             }
+            .navigationTitle("Feed")
             .navigationBarTitleDisplayMode(.inline)
             .task {
                 issueViewModel.getDataFromFirebase()
             }
-            .navigationTitle("Feed")
         }
     }
 }
 
 struct IssuePage_Previews: PreviewProvider {
     static var previews: some View {
-        IssuePage()
-        
-        
+        Group {
+            IssuePage()
+//            IssuePage()
+//                .previewDevice("iPhone 8")
+        } .environmentObject(IssueViewModel())
     }
 }

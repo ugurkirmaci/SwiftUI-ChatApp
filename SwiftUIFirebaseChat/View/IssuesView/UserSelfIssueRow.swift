@@ -34,21 +34,23 @@ struct UserSelfIssueRow: View {
                     }
                     else {
                         //MARK: - if list is empty, show "list is empty" Text
+                        Spacer()
                         Text("List is Empty")
                             .bold()
                             .font(.largeTitle)
                             .foregroundColor(.red)
-                            .padding(.leading, 50)
+                        Spacer()
                     }
                 }
             }//:ScroolView
         }//:HStack
-        .frame(height: getScreenBounds().height * 0.16 , alignment: .center)
+        .frame(height: getScreenBounds().height * 0.135 , alignment: .center)
     }
 }
 
 struct UserSelfIssueRow_Previews: PreviewProvider {
     static var previews: some View {
         UserSelfIssueRow()
+            .environmentObject(IssueViewModel())
     }
 }

@@ -12,6 +12,7 @@ struct IssuesGrid: View {
     private var layout = [
         GridItem(.flexible()),
         GridItem(.flexible()),
+        GridItem(.flexible()),
         GridItem(.flexible())
     ]
    
@@ -35,5 +36,6 @@ struct IssuesGrid: View {
 struct UsersIssuesGrid_Previews: PreviewProvider {
     static var previews: some View {
         IssuesGrid()
+            .environmentObject(IssueViewModel())
     }
 }
