@@ -9,7 +9,6 @@ import SwiftUI
 
 struct IssueItem: View {
     
-    @EnvironmentObject var issueViewModel: IssueViewModel
     var issue: Issue
  
     //MARK: - Label structure where posts will be displayed on "issue Page"
@@ -18,8 +17,8 @@ struct IssueItem: View {
             Image(systemName: "circle.fill")
                 .renderingMode(.original)
                 .resizable()
-                .frame(width: getScreenBounds().width * 0.25 ,
-                       height: getScreenBounds().width * 0.25,
+                .frame(width: getScreenBounds().width * 0.20 ,
+                       height: getScreenBounds().width * 0.20,
                        alignment: .center)
                 .clipShape(Circle())
                 .foregroundColor(.white)
@@ -27,10 +26,21 @@ struct IssueItem: View {
                 
             //Programming Language text
             Text(issue.programmingLanguage)
-                .frame(width: 110, height: 20, alignment: .center)
+                .frame(width: getScreenBounds().width * 0.20, height: 20, alignment: .center)
                 .foregroundColor(.primary)
                 .font(.footnote)
         }
         .padding(.vertical, 20)
+    }
+}
+
+struct IssueItem_Previews: PreviewProvider {
+    static var previews: some View {
+        Group {
+            IssueItem(issue: issueTestObject().issue1)
+            IssueItem(issue: issueTestObject().issue1)
+                .previewDevice("iPhone 8")
+            
+        }
     }
 }

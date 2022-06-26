@@ -23,8 +23,8 @@ struct NewIssueButton: View {
                     .placeholder(content: {
                         ProgressView()
                     })
-                    .frame(width: getScreenBounds().width * 0.25,
-                           height: getScreenBounds().width * 0.25,
+                    .frame(width: getScreenBounds().width * 0.20,
+                           height: getScreenBounds().width * 0.20,
                            alignment: .center)
                     .clipShape(Circle())
                     .foregroundColor(.white)
@@ -37,15 +37,15 @@ struct NewIssueButton: View {
                         .resizable()
                         .background(Color.white)
                         .clipShape(Circle())
-                        .frame(width: getScreenBounds().width * 0.1,
-                               height: getScreenBounds().width * 0.1)
+                        .frame(width: getScreenBounds().width * 0.08,
+                               height: getScreenBounds().width * 0.08)
                         .foregroundColor(.blue)
                 }
             }//:ZStack
             
             //MARK: - New Issue Text
             Text("New Issue")
-                .font(.title2)
+                .font(.title3)
             
             NavigationLink("", isActive: $isShowNewIssuePage) {
                 NewIssue(email: userViewModel.chatUser?.email ?? "", isShowNewIssuePage: $isShowNewIssuePage)
