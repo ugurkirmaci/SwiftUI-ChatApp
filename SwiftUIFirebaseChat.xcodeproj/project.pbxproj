@@ -21,7 +21,6 @@
 		786E7F78285E3C1000C5A87D /* IssueItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786E7F68285E3C1000C5A87D /* IssueItem.swift */; };
 		786E7F79285E3C1000C5A87D /* IssuesGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786E7F69285E3C1000C5A87D /* IssuesGrid.swift */; };
 		786E7F7A285E3C1000C5A87D /* ScreenBounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786E7F6B285E3C1000C5A87D /* ScreenBounds.swift */; };
-		786E7F7B285E3C1000C5A87D /* CustomizedErrorAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786E7F6C285E3C1000C5A87D /* CustomizedErrorAlert.swift */; };
 		786E7F7C285E3C1000C5A87D /* HiddenExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786E7F6D285E3C1000C5A87D /* HiddenExtension.swift */; };
 		786E7F7F285E3E8300C5A87D /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = 786E7F7E285E3E8300C5A87D /* MarkdownUI */; };
 		F82B786B277DE43F00454636 /* ChatLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82B786A277DE43F00454636 /* ChatLogView.swift */; };
@@ -61,7 +60,6 @@
 		786E7F68285E3C1000C5A87D /* IssueItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IssueItem.swift; sourceTree = "<group>"; };
 		786E7F69285E3C1000C5A87D /* IssuesGrid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IssuesGrid.swift; sourceTree = "<group>"; };
 		786E7F6B285E3C1000C5A87D /* ScreenBounds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenBounds.swift; sourceTree = "<group>"; };
-		786E7F6C285E3C1000C5A87D /* CustomizedErrorAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomizedErrorAlert.swift; sourceTree = "<group>"; };
 		786E7F6D285E3C1000C5A87D /* HiddenExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HiddenExtension.swift; sourceTree = "<group>"; };
 		F82B786A277DE43F00454636 /* ChatLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogView.swift; sourceTree = "<group>"; };
 		F852497D2783376300876F9C /* RecentMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentMessage.swift; sourceTree = "<group>"; };
@@ -144,7 +142,6 @@
 			isa = PBXGroup;
 			children = (
 				786E7F6B285E3C1000C5A87D /* ScreenBounds.swift */,
-				786E7F6C285E3C1000C5A87D /* CustomizedErrorAlert.swift */,
 				786E7F6D285E3C1000C5A87D /* HiddenExtension.swift */,
 			);
 			path = Helpers;
@@ -333,7 +330,6 @@
 				786E7F6E285E3C1000C5A87D /* Issue.swift in Sources */,
 				F852498227833B6B00876F9C /* FirebaseConstants.swift in Sources */,
 				786E7F5A285E3BE700C5A87D /* IssueViewModel.swift in Sources */,
-				786E7F7B285E3C1000C5A87D /* CustomizedErrorAlert.swift in Sources */,
 				786E7F70285E3C1000C5A87D /* CodeSnippet.swift in Sources */,
 				786E7F73285E3C1000C5A87D /* NewIssue.swift in Sources */,
 				786E7F77285E3C1000C5A87D /* UserSelfIssueRow.swift in Sources */,
