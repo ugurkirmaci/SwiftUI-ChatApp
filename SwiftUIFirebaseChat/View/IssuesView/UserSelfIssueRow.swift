@@ -10,7 +10,8 @@ struct UserSelfIssueRow: View {
     @State var isActiveNavigation = false
     
     private var filteredIssueList: [Issue] {
-        return issueViewModel.sortedlist.filter { $0.user.email == Auth.auth().currentUser?.email }
+        let filteredList = issueViewModel.issuesList.filter { $0.user.email == Auth.auth().currentUser?.email }
+        return filteredList.sort(sortBy: .Date)
     }
     
     var body: some View {
