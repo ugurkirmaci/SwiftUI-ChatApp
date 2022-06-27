@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7842098B2869E103000BA72E /* ArraySortExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7842098A2869E103000BA72E /* ArraySortExtension.swift */; };
+		7842098D2869E9A4000BA72E /* IssueSortPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7842098C2869E9A4000BA72E /* IssueSortPicker.swift */; };
 		786E7F5A285E3BE700C5A87D /* IssueViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786E7F59285E3BE700C5A87D /* IssueViewModel.swift */; };
 		786E7F6E285E3C1000C5A87D /* Issue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786E7F5B285E3C1000C5A87D /* Issue.swift */; };
 		786E7F6F285E3C1000C5A87D /* TabViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786E7F5D285E3C1000C5A87D /* TabViews.swift */; };
@@ -46,6 +48,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7842098A2869E103000BA72E /* ArraySortExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArraySortExtension.swift; sourceTree = "<group>"; };
+		7842098C2869E9A4000BA72E /* IssueSortPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueSortPicker.swift; sourceTree = "<group>"; };
 		786E7F59285E3BE700C5A87D /* IssueViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IssueViewModel.swift; sourceTree = "<group>"; };
 		786E7F5B285E3C1000C5A87D /* Issue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Issue.swift; sourceTree = "<group>"; };
 		786E7F5D285E3C1000C5A87D /* TabViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabViews.swift; sourceTree = "<group>"; };
@@ -116,14 +120,15 @@
 		786E7F5E285E3C1000C5A87D /* IssuesView */ = {
 			isa = PBXGroup;
 			children = (
-				786E7F5F285E3C1000C5A87D /* CodeSnippet.swift */,
-				786E7F60285E3C1000C5A87D /* NewIssueButton.swift */,
 				786E7F61285E3C1000C5A87D /* IssuePage.swift */,
-				786E7F62285E3C1000C5A87D /* NewIssue */,
-				786E7F66285E3C1000C5A87D /* IssueDetails.swift */,
+				786E7F60285E3C1000C5A87D /* NewIssueButton.swift */,
+				7842098C2869E9A4000BA72E /* IssueSortPicker.swift */,
 				786E7F67285E3C1000C5A87D /* UserSelfIssueRow.swift */,
-				786E7F68285E3C1000C5A87D /* IssueItem.swift */,
 				786E7F69285E3C1000C5A87D /* IssuesGrid.swift */,
+				786E7F68285E3C1000C5A87D /* IssueItem.swift */,
+				786E7F66285E3C1000C5A87D /* IssueDetails.swift */,
+				786E7F5F285E3C1000C5A87D /* CodeSnippet.swift */,
+				786E7F62285E3C1000C5A87D /* NewIssue */,
 			);
 			path = IssuesView;
 			sourceTree = "<group>";
@@ -143,6 +148,7 @@
 			children = (
 				786E7F6B285E3C1000C5A87D /* ScreenBounds.swift */,
 				786E7F6D285E3C1000C5A87D /* HiddenExtension.swift */,
+				7842098A2869E103000BA72E /* ArraySortExtension.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -333,10 +339,12 @@
 				786E7F70285E3C1000C5A87D /* CodeSnippet.swift in Sources */,
 				786E7F73285E3C1000C5A87D /* NewIssue.swift in Sources */,
 				786E7F77285E3C1000C5A87D /* UserSelfIssueRow.swift in Sources */,
+				7842098D2869E9A4000BA72E /* IssueSortPicker.swift in Sources */,
 				F8524980278337BF00876F9C /* ChatMessage.swift in Sources */,
 				F8D4E750277A6D6100F55027 /* ImagePicker.swift in Sources */,
 				786E7F75285E3C1000C5A87D /* CodeSnippetTextEditör.swift in Sources */,
 				786E7F7C285E3C1000C5A87D /* HiddenExtension.swift in Sources */,
+				7842098B2869E103000BA72E /* ArraySortExtension.swift in Sources */,
 				786E7F74285E3C1000C5A87D /* CreateButton.swift in Sources */,
 				F8D8D83E277CA72000244763 /* MainMessageView.swift in Sources */,
 				F8D8D841277CBA4E00244763 /* FirebaseManager.swift in Sources */,

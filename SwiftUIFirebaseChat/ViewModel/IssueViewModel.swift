@@ -14,39 +14,10 @@ class IssueViewModel: ObservableObject {
     @Published var selectedIssue: Issue?
     
     let db = Firestore.firestore()
-    var sortedlist: [Issue] {
-            get {
-                issuesList.sorted(by: { $0.date > $1.date })
-            }
-            set {
-                issuesList = newValue
-            }
-        }
     
 }
 
-extension IssueViewModel {
-    func sortIssue(sortBy: sortIssue ) -> [Issue]{
-        switch sortBy {
-        case .date:
-            return issuesList.sorted(by: { $0.date > $1.date })
-        case .title:
-            return issuesList.sorted(by: {$0.title > $1.title })
-        case .language:
-            return issuesList.sorted(by: {$0.programmingLanguage > $1.programmingLanguage })
-        case .answered:
-            return issuesList.filter( {$0.isAnswered})
-        }
-    }
-}
-
-enum sortIssue {
-    case title
-    case date
-    case language
-    case answered
-}
-
+//MARK: - Check Answered
 //Check if issue is answered
 extension IssueViewModel {
     func isAnswered(id: String) -> Bool {
@@ -59,6 +30,7 @@ extension IssueViewModel {
     }
 }
 
+//MARK: - Create Issue
 //Add issue item to firebase
 extension IssueViewModel {
     func createNewIssue(title: String, language: String,codeSnippet: String,description: String, user: ChatUser) {
@@ -84,6 +56,7 @@ extension IssueViewModel {
     }
 }
 
+//MARK: - Delete Issue
 //Delete issue from firebase
 extension IssueViewModel {
     func deleteIssue(issue: Issue){
@@ -95,6 +68,7 @@ extension IssueViewModel {
     }
 }
 
+//MARK: - Update Answer
 //Update to firebase if is issue answered
 extension IssueViewModel {
     func updateAnswer(issue: Issue, isAnswered: Bool){
@@ -107,6 +81,7 @@ extension IssueViewModel {
     }
 }
 
+//MARK: - Fetch Data
 //Fetch data from firebase
 extension IssueViewModel {
     func getDataFromFirebase(){
