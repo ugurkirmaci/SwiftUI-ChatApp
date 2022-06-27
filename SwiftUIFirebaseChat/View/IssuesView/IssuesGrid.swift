@@ -8,8 +8,9 @@ import SwiftUI
 
 struct IssuesGrid: View {
     @EnvironmentObject var issueViewModel: IssueViewModel
+    @Binding var issueListSortedBy: IssueSortBy
     
-    private var layout = [
+    var layout = [
         GridItem(.flexible()),
         GridItem(.flexible()),
         GridItem(.flexible()),
@@ -20,7 +21,7 @@ struct IssuesGrid: View {
     var body: some View {
         ScrollView{
             LazyVGrid(columns: layout) {
-                ForEach(issueViewModel.sortIssue(sortBy: .date) ) {issue in
+                ForEach(issueViewModel.issuesList.sort(sortBy: issueListSortedBy) ) {issue in
                     NavigationLink{
                         IssueDetails(issue: issue, isOwn: false)
                             .environmentObject(issueViewModel)
@@ -34,8 +35,9 @@ struct IssuesGrid: View {
 }
 
 struct UsersIssuesGrid_Previews: PreviewProvider {
+    @State static var sortby = IssueSortBy.Date
     static var previews: some View {
-        IssuesGrid()
+        IssuesGrid(issueListSortedBy: $sortby)
             .environmentObject(IssueViewModel())
     }
 }
