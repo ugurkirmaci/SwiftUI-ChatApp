@@ -9,19 +9,22 @@ import SwiftUI
 
 struct IssuePage: View {
     @EnvironmentObject var issueViewModel: IssueViewModel
-    
+    @State var issueSortByPickerSelection: IssueSortBy = .Date
     var body: some View {
-        
         NavigationView {
             VStack{
                 UserSelfIssueRow()
                 Divider()
-                IssuesGrid()
+                IssuesGrid(issueListSortedBy: $issueSortByPickerSelection)
+                    .environmentObject(issueViewModel)
             }
             .navigationTitle("Feed")
             .navigationBarTitleDisplayMode(.inline)
             .task {
                 issueViewModel.getDataFromFirebase()
+            }
+            .toolbar {
+                IssueSortPicker(selection: $issueSortByPickerSelection)
             }
         }
     }
