@@ -44,8 +44,9 @@ struct NewIssueButton: View {
             }//:ZStack
             
             //MARK: - New Issue Text
-            Text("New Issue")
-                .font(.title3)
+            Text("Crete Issue")
+                .font(.title2)
+                .opacity(0.5)
             
             NavigationLink("", isActive: $isShowNewIssuePage) {
                 NewIssue(email: userViewModel.chatUser?.email ?? "", isShowNewIssuePage: $isShowNewIssuePage)
