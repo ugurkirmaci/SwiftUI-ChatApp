@@ -18,13 +18,17 @@ struct IssuePage: View {
                 IssuesGrid(issueListSortedBy: $issueSortByPickerSelection)
                     .environmentObject(issueViewModel)
             }
-            .navigationTitle("Feed")
             .navigationBarTitleDisplayMode(.inline)
             .task {
                 issueViewModel.getDataFromFirebase()
             }
             .toolbar {
-                IssueSortPicker(selection: $issueSortByPickerSelection)
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    HStack {
+                        Text("Sort by:")
+                        IssueSortPicker(selection: $issueSortByPickerSelection)
+                    }.font(.title2)
+                }
             }
         }
     }

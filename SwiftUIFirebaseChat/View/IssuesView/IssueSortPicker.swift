@@ -10,11 +10,13 @@ import SwiftUI
 struct IssueSortPicker: View {
     @Binding var selection: IssueSortBy
     var body: some View {
-        Picker("Sort By", selection: $selection) {
-            ForEach(IssueSortBy.allCases) {
-                Text($0.rawValue).tag($0)
+        Menu(selection.rawValue) {
+            Picker("Sort By", selection: $selection) {
+                ForEach(IssueSortBy.allCases) {
+                    Text($0.rawValue).tag($0)
+                }
+                .pickerStyle(SegmentedPickerStyle())
             }
-            .pickerStyle(SegmentedPickerStyle())
         }
     }
 }
