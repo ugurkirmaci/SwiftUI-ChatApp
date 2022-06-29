@@ -61,15 +61,18 @@ struct NewIssue: View {
                 }
             }
             Divider()
-            
-            NavigationLink {
-                CodeSnippetTextEditor(textEditor: $codeSnippet)
-            } label: {
-                Image(systemName: "rectangle.portrait.and.arrow.right")
-                    .resizable()
-                    .frame(width: getScreenBounds().width * 0.1,
-                           height: getScreenBounds().width * 0.1)
-                    .padding()
+            HStack {
+                Text("Code Snippet")
+                    .foregroundColor(.blue)
+                NavigationLink {
+                    CodeSnippetTextEditor(textEditor: $codeSnippet)
+                } label: {
+                    Image(systemName: "rectangle.portrait.and.arrow.right")
+                        .resizable()
+                        .frame(width: getScreenBounds().width * 0.1,
+                               height: getScreenBounds().width * 0.1)
+                        .padding()
+                }
             }
             Divider()
             HStack {
@@ -89,7 +92,6 @@ struct NewIssue: View {
                 .border(.secondary)
                 .multilineTextAlignment(.leading)
                 .font(.footnote)
-            
             
             //MARK: - Create Button
             HStack {
