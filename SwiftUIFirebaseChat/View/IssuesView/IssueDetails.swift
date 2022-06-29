@@ -28,6 +28,17 @@ struct IssueDetails: View {
                                height: getScreenBounds().height * 0.05,
                                alignment: Alignment.leading)
                 }
+                HStack {
+                    Text("Date: ")
+                        .frame(width: getScreenBounds().width * 0.2
+                               , height: getScreenBounds().height * 0.05,
+                               alignment: .leading)
+                        .foregroundColor(.red)
+                    Text(issue.date)
+                        .frame(width: getScreenBounds().width * 0.7,
+                               height: getScreenBounds().height * 0.05,
+                               alignment: Alignment.leading)
+                }
                 HStack{
                     Text("Title: ")
                         .frame(width: getScreenBounds().width * 0.2
