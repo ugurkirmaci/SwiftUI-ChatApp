@@ -23,9 +23,9 @@ extension Array where Element == Issue {
         case .Title:
             return self.sorted(by: {$0.title > $1.title })
         case .Language:
-            return self.sorted(by: {$0.programmingLanguage > $1.programmingLanguage })
+            return self.sorted(by: {$0.programmingLanguage < $1.programmingLanguage })
         case .Answered:
-            return self.filter( {$0.isAnswered})
+            return self.filter( {!$0.isAnswered})
         }
     }
 }
