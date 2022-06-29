@@ -12,9 +12,17 @@ struct CodeSnippet: View {
     var body: some View {
         ScrollView([.vertical,.horizontal],showsIndicators: true) {
             Text(codeSnippetString)
+                .padding()
+                .background(Color.blue)
+                .cornerRadius(30)
+                .foregroundColor(.white)
+                
+                
         }.frame(width: .none,
                 height: .none,
                 alignment: .topLeading )
+        
+        
         .padding(.top)
     }
 }
