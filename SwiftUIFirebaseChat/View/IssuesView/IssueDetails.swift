@@ -67,16 +67,17 @@ struct IssueDetails: View {
             //MARK: - CodeSnippet Navigation Link
             HStack {
                 Text("Code Snippet")
-                    .foregroundColor(.blue)
-                
+                    .foregroundColor(isAnswered ? .green : .red)
+
                 NavigationLink {
-                    CodeSnippet(codeSnippetString: issue.codeSnippet)
+                    CodeSnippet(codeSnippetString: issue.codeSnippet, answerColor: $isAnswered)
                 } label: {
                     Image(systemName: "rectangle.portrait.and.arrow.right")
                         .resizable()
                         .frame(width: getScreenBounds().width * 0.1,
                                height: getScreenBounds().width * 0.1)
                         .padding()
+                        .foregroundColor(isAnswered ? .green : .red)
                 }
             }
             Divider()
