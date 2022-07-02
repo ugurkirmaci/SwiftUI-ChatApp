@@ -8,12 +8,13 @@
 import SwiftUI
 struct CodeSnippet: View {
     let codeSnippetString: String
+    @Binding var answerColor: Bool
     
     var body: some View {
         ScrollView([.vertical,.horizontal],showsIndicators: true) {
             Text(codeSnippetString)
                 .padding()
-                .background(Color.blue)
+                .background(answerColor ? Color.green : Color.red)
                 .cornerRadius(30)
                 .foregroundColor(.white)
                 
@@ -28,7 +29,8 @@ struct CodeSnippet: View {
 }
 
 struct CodeSnippet_Previews: PreviewProvider {
+    @State static var answerColor = true
     static var previews: some View {
-        CodeSnippet(codeSnippetString: "Test")
+        CodeSnippet(codeSnippetString: "Test", answerColor: $answerColor)
     }
 }
