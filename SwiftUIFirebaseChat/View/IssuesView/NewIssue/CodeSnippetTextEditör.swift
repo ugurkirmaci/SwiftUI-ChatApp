@@ -7,7 +7,7 @@ import SwiftUI
 
 struct CodeSnippetTextEditor: View {
     @Binding var textEditor: String
-    @State var isShowInfo = true
+    @State var isShowInfo = false
     
     let textRules = ["Copy and paste your code",
                      "After pasting your code, you can go back with back button",
