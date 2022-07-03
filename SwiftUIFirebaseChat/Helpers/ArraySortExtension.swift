@@ -21,7 +21,7 @@ extension Array where Element == Issue {
         case .Date:
             return self.sorted(by: { $0.date > $1.date })
         case .Title:
-            return self.sorted(by: {$0.title > $1.title })
+            return self.sorted(by: {$0.title < $1.title })
         case .Language:
             return self.sorted(by: {$0.programmingLanguage < $1.programmingLanguage })
         case .Answered:
