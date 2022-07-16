@@ -21,14 +21,5 @@
 - SDWebImage Library
 - Custom Modifiers
 - Animations
-- Image picker. 
-
-## Developer Rules 
-- Application will be written in Swift programming language.
-- SwiftUI framework will be used.
-- MVVM software architecture will be adhered to.
-- UI frames will be made dynamically, not statically.
-- Project will be managed via github. 
-- For Github, branch system will be adhered to.
-- Swift lifecycle rule will be adhered to for code readability.
+- Image picker.
  
